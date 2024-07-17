@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class Endereco {
 
     private @NotBlank String logradouro;
@@ -23,6 +22,7 @@ public class Endereco {
     private @NotBlank @Pattern(regexp = "\\d{8}") String cep;
 
     public Endereco(Endereco dados) {
+
         this.bairro = dados.bairro;
         this.cep = dados.cep;
         this.cidade = dados.cidade;
@@ -33,6 +33,7 @@ public class Endereco {
     }
 
     public void atualizarInformacoes(Endereco dados) {
+
         if (bairro != null) {
             this.bairro = dados.bairro;
         }
