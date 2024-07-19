@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import med.voll.api.domain.medico.Especialidade;
 import med.voll.api.domain.medico.Medico;
 import med.voll.api.domain.paciente.Paciente;
+import org.springframework.http.ResponseEntity;
 
 import java.time.LocalDateTime;
 

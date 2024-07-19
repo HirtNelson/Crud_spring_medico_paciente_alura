@@ -7,5 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface PacienteRepository extends JpaRepository<Paciente, Long> {
     Page<Paciente> findAllByAtivoTrue(Pageable paginacao);
 
-    boolean findAtivoById(Long idPaciente);
+    Paciente findAtivoById(Long idPaciente);
+
+    boolean existsByIdAndAtivoTrue(Long idPaciente);
 }

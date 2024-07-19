@@ -13,7 +13,7 @@ public class ValidadorPacienteAtivo implements ValidadorAgendamentoDeConsulta{
     private PacienteRepository pacienteRepository;
 
     public void validar(DadosAgendamentoConsulta dados){
-        var pacienteAtivo = pacienteRepository.findAtivoById(dados.idPaciente());
+        var pacienteAtivo = pacienteRepository.existsByIdAndAtivoTrue(dados.idPaciente());
         if (!pacienteAtivo){
             throw new ValidacaoException("Paciente não está ativo no sistema.");
         }
