@@ -1,5 +1,6 @@
 package med.voll.api.controller;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import med.voll.api.domain.medico.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,7 @@ public class MedicoController {
 
     @Transactional
     @PostMapping
+    @SecurityRequirement(name = "bearer-key")
     public ResponseEntity cadastraMedico(@RequestBody @Valid CadastroMedico dados, UriComponentsBuilder uriBuilder){
         var medico = new Medico(dados);
         repository.save(medico);
